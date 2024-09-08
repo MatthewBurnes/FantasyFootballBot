@@ -15,7 +15,6 @@ while(True):
     week = currNFLState.json()['week']
     currRosters = requests.get('https://api.sleeper.app/v1/league/1125590030598131712/rosters')
     for roster in currRosters.json():
-        #   print(roster)
           if roster['owner_id'] == userID:
                 myRosterId = roster['roster_id']
     
@@ -27,6 +26,7 @@ while(True):
     
     while(week == requests.get('https://api.sleeper.app/v1/state/nfl').json()['week']):
           #wait for a minute
+          time.sleep(60)
           matchupState = currJSON = requests.get("https://api.sleeper.app/v1/league/1125590030598131712/matchups/" + str(currNFLState.json()['week'])).json()
           for matchup in matchupState:
                 if matchup['roster_id'] == myRosterId:
@@ -34,7 +34,8 @@ while(True):
                             currPoints = matchup['points']
                             sendEmail.sendEmail()
                             print(currPoints)
-                            time.sleep(60)
+            
 
 
 #make this into a sportsbetting predictor?
+#make this a service to receive text or email updates for your own fantasy team? "Give me your userID and league ID and I'll automatically send player scores and win percentage changes"
