@@ -11,5 +11,5 @@ def sendEmail():
     smtpObj.ehlo()
     smtpObj.starttls()
     smtpObj.login('coachgusthagoat@outlook.com', 'Redhotspot!')
-    smtpObj.sendmail('coachgusthagoat@outlook.com', 'matthewburnes@berkeley.edu', 'Subject: TestEmail.\n\nDear Alice, so long and thanks for all the fish. Sincerely, Bob')
+    smtpObj.sendmail('coachgusthagoat@outlook.com', 'lkarlitz@berkeley.edu', 'Subject: BurnesScoredAgainstYou.\n\nLaaaannneeee I scored against you Laaannneeeee \n -- Burnes \n -- This is a bot, and can not respond')
     smtpObj.quit()

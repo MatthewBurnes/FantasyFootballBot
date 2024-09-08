@@ -30,6 +30,8 @@ while(True):
           matchupState = currJSON = requests.get("https://api.sleeper.app/v1/league/1125590030598131712/matchups/" + str(currNFLState.json()['week'])).json()
           for matchup in matchupState:
                 if matchup['roster_id'] == myRosterId:
+                      print(currPoints)
+                      print(matchup['points'])
                       if (currPoints < matchup['points']):
                             currPoints = matchup['points']
                             sendEmail.sendEmail()
