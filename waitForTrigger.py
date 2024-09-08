@@ -31,7 +31,9 @@ while(True):
           for matchup in matchupState:
                 if matchup['roster_id'] == myRosterId:
                       if (currPoints < matchup['points']):
+                            currPoints = matchup['points']
                             sendEmail()
+                            print(currPoints)
                             time.sleep(60)
 
 
